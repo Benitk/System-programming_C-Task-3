@@ -3,7 +3,7 @@
 void insertion_sort_ben(int* arr, int len);
 void shift_element(int* arr, int i);
 
-int main(){
+int mains(){
 	int arr[] = {3,2,4,5,1,8,2,3,8};
 	int len = sizeof(arr) / sizeof(int);
 	insertion_sort_ben(arr, len);
