@@ -1,19 +1,4 @@
-#include <stdio.h>
-
-void insertion_sort(int* arr, int len);
-void shift_element(int* arr, int i);
-
-
-/*
-int main(){
->>>>>>> dcaba6bfb31f1eda0627b0f27a70d2ede3317318
-	int arr[] = {3,2,4,5,1,8,2,3,8};
-	int len = sizeof(arr) / sizeof(int);
-	insertion_sort(arr, len);
-	for(int i = 0; i < len; i++){
-		printf("array index %d = %d\n",i, *(arr+i));
-	}
-} */
+#include "isort.h"
 
 void insertion_sort(int* arr, int len){
 	int counter, temp, j;
@@ -51,10 +36,10 @@ void insertion_sort(int* arr, int len){
 }
 
 void shift_element(int* arr, int i) {
-	int* p = arr+i; //pointer to the last index
-	int* p_new = arr+i+1;
-	while(p > arr) {
-		*(p_new) = *(p);
+	int* p = arr + i; //pointer to the last index
+	int* p_new = arr + i + 1; //pointer to the last index + 1
+	while(p > arr) { // as long as pointer p is has bigger index then the first
+		*(p_new) = *(p); // shift elemtents to the left
 		p--;
 		p_new--;
 	}
