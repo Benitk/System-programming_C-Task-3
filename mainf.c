@@ -15,10 +15,11 @@ int main(){
 	char type;
 	while(1) {
 		c = getchar();       // Get one character from the input
-		if (c == EOF) {// line_length > LINE-1
+		if (c == EOF) {
 			break; }  // Exit the loop if we receive EOF ("end of file")
 		*(p_line + line_length) = c;// fill the array
 		line_length++;
+		// first line try get the type and word always in format of 'word' space 'type'
 		if(c == '\n'  && line_num == 1){
 			type = *(p_line + line_length -2); // get the type a or b
 			strncpy(word,p_line, line_length - 3);
@@ -27,6 +28,7 @@ int main(){
 			line_length = 0;
 			line_num++;
 		}
+		// other lines
 		else if(c == '\n' && line_num > 1){
 			if(type == 'a'){// type a print lines with word
 				*(p_line + line_length) = '\0';
@@ -36,7 +38,7 @@ int main(){
 				line_length = 0;
 			}
 			else{
-				print_similar_words(p_line,word);
+				print_similar_words(p_line,word); // type b print similar words
 				p_line = p_line + line_length + 1;// point to new line
 				line_num++;
 				line_length = 0;

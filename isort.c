@@ -8,7 +8,6 @@ void insertion_sort(int* arr, int len){
 		j = i-1;
 		//j can be 0 because j is index and there is a value in arr[0]
 		while(j >= 0){
-			//normal compare
 			if(*(arr+i) <= *(arr+j)){
 				// count the number of smaller values then arr[i]
 				counter++;
@@ -27,9 +26,8 @@ void insertion_sort(int* arr, int len){
 			shift_element(arr+j, counter);
 
 			// now return temp to its place in the array, in the end of every while loop j is index of one less
-			// than the most left value we need to swap with  so this is way its j+1.
-			// arr:     4,3,2                      arr:    4, 4, 3					    arr:    2,4,3
- 			// index: j,0,1,2 ---> so shift first, index:j,0, 1, 2 ---> now return temp index:j,0,1,2 --> and go on...
+			// than the most left value we need to swap with so this is way its j+1.
+
 			*(arr+j+1) = temp;
 		}
 	}

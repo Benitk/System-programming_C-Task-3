@@ -23,4 +23,4 @@ mains.o: mains.c isort.h
 .PHONY: clean all
 
 clean:
-	rm -f *.o *.a *.so txtfind isort
+	rm -f *.o txtfind isort
